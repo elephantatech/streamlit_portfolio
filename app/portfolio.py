@@ -3,7 +3,8 @@ import streamlit as st
 def show_portfolio():
     st.header("Portfolio")
 
-    projects = [
+
+    old_projects = [
         {
             "title": "Making APIs work for you",
             "description": "Webinar series I delivered for BlueCat Networks while I worked there.",
@@ -18,7 +19,10 @@ def show_portfolio():
             "title": "Decode url chrome extension",
             "description": "My chrome extension I use when troubleshooting the url during development on chrome like browsers.",
             "url": "https://github.com/elephantatech/url-decorder-extension"
-        },
+        }
+    ]
+
+    current_projects = [
         {
             "title": "ticketmaster",
             "description": "FastAPI REST API that allows for simple ticket system with Redis database.",
@@ -56,9 +60,18 @@ def show_portfolio():
         }
     ]
 
-    cols = st.columns(3)  # Create 3 columns for the grid layout
+    st.subheader("Older Projects", divider=True)
+    old_cols = st.columns(3)  # Create 3 columns for the grid layout
 
-    for i, project in enumerate(projects):
-        with cols[i % 3]:
+    for i, project in enumerate(old_projects):
+        with old_cols[i % 3]:
+            st.markdown(f"[**{project['title']}**]({project['url']})")
+            st.write(project["description"])
+    
+    st.subheader("Active Projects", divider=True)
+    curr_cols = st.columns(3)  # Create 3 columns for the grid layout
+
+    for i, project in enumerate(current_projects):
+        with curr_cols[i % 3]:
             st.markdown(f"[**{project['title']}**]({project['url']})")
             st.write(project["description"])

@@ -14,10 +14,27 @@ st.title("Vivek Mistry's Portfolio")
 
 st.sidebar.title("Navigation")
 
+# Add CSS to make buttons the same width
+st.markdown(
+    """
+    <style>
+    .sidebar .stButton button {
+        width: 100%;
+        display: block;
+        margin: 5px 0;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 # Create buttons for navigation
-st.sidebar.button("About", on_click=set_page, args=("About",))
-st.sidebar.button("Contact", on_click=set_page, args=("Contact",))
-st.sidebar.button("Portfolio", on_click=set_page, args=("Portfolio",))
+if st.sidebar.button("About", use_container_width=True):
+    set_page("About")
+if st.sidebar.button("Contact", use_container_width=True):
+    set_page("Contact")
+if st.sidebar.button("Portfolio", use_container_width=True):
+    set_page("Portfolio")
 
 # Display the selected page
 if st.session_state.page == 'About':

@@ -9,6 +9,10 @@ def show_about():
     st.header("Social Connections")
     st.markdown(":baby_chick: [Twitter](https://twitter.com/elephantatech)")
     st.markdown(":office: [linkedin](https://www.linkedin.com/in/vivekmistry/)")
+    st.markdown(":book: [Old blogger](http://techmystery.blogspot.com/)")
+    st.markdown(":camera: [flickr](https://www.flickr.com/people/elephantatech/)")
+    st.markdown("🖌️ [behance](https://www.behance.net/vivekmistry)")
     st.markdown(":elephant: [more about me](https://about.me/vivekmistry)")
+
 
 
